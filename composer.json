@@ -1,0 +1,17 @@
+{
+    "name": "bruno/bot-twitter-publish",
+    "autoload": {
+        "psr-4": {
+            "Bruno\\BotTwitterPublish\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lomudru",
+            "email": "kmejasson@gmail.com"
+        }
+    ],
+    "require": {
+        "abraham/twitteroauth": "^4.0"
+    }
+}
