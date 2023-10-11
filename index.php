@@ -10,7 +10,7 @@ $accessTokenSecret = '***';
 $tweet = "testimg";
 
 // Chemin de l'image que vous voulez poster
-$imagePath = 'C:\wamp64\www\bot-twitter-publish\tweet.jpg';
+$imagePath = 'tweet.jpg';
 
 // Chargez la bibliothèque TwitterOAuth
 require 'vendor/autoload.php';
@@ -40,14 +40,12 @@ if (file_exists($imagePath)) {
 
         $connection->post("tweets", $queryParams, true);
 
-        echo "<pre>" . var_export($media, true) ."</pre>";
-
 
         // Vérifiez si le tweet a été publié avec succès
         if ($connection->getLastHttpCode() == 200 || $connection->getLastHttpCode() == 201) {
             echo "Tweet publié avec succès!";
         } else {
-            echo "Erreur lors de la publication du tweet : <pre>" . var_export($connection, true) ."</pre><hr>". $connection->getLastHttpCode();
+            echo "Erreur lors de la publication du tweet : " .  $connection->getLastHttpCode();
         }
     } else {
         echo "Erreur lors du chargement de l'image : " . json_encode($media, JSON_PRETTY_PRINT);
